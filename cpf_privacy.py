@@ -27,4 +27,4 @@ def ocultar_cpf(input_pdf):
             writer.write(output_file)
 
 # exemplo de uso
-# ocultar_cpf('seu_arquivo.pdf')
+ocultar_cpf('seu_arquivo.pdf')
