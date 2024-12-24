@@ -1,4 +1,5 @@
-import PyPDF2 # type: ignore
+#!/usr/bin/env python
+import PyPDF2
 import re
 import os
 
