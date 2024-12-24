@@ -2,6 +2,7 @@
 import PyPDF2
 import re
 import os
+import sys
 
 def ocultar_cpf(input_pdf):
     # abrir o arquivo PDF
@@ -9,7 +10,6 @@ def ocultar_cpf(input_pdf):
         reader = PyPDF2.PdfFileReader(file)
         writer = PyPDF2.PdfFileWriter()
 
-        # iterar por todas as páginas do PDF
         for page_num in range(reader.numPages):
             page = reader.getPage(page_num)
             text = page.extract_text()
@@ -23,9 +23,14 @@ def ocultar_cpf(input_pdf):
             writer.addPage(page)
 
         # salvar o novo arquivo PDF com o nome modificado
-        output_pdf = f"{os.path.splitext(input_pdf)[0]}(CPF OCULTO).pdf"
+        output_pdf = f"{os.path.splitext(input_pdf)[0]} (CPF OCULTO).pdf"
         with open(output_pdf, 'wb') as output_file:
             writer.write(output_file)
 
-# exemplo de uso
-ocultar_cpf('seu_arquivo.pdf')
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python cpf_privacy.py <input_pdf>")
+        sys.exit(1)
+
+    input_pdf = sys.argv[1]
+    ocultar_cpf(input_pdf)
