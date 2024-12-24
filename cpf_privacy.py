@@ -1,4 +1,4 @@
-import PyPDF2
+import PyPDF2 # type: ignore
 import re
 import os
 
