@@ -23,7 +23,7 @@ def ocultar_cpf(input_pdf):
             writer.addPage(page)
 
         # salvar o novo arquivo PDF com o nome modificado
-        output_pdf = f"{os.path.splitext(input_pdf)[0]} (CPF OCULTO).pdf"
+        output_pdf = f"{os.path.splitext(input_pdf)[0]}(CPF OCULTO).pdf"
         with open(output_pdf, 'wb') as output_file:
             writer.write(output_file)
 
