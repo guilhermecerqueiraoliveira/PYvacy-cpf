@@ -1,8 +1,11 @@
 #!/usr/bin/env python
-import PyPDF2
 import re
 import os
 import sys
+from PyPDF2 import PdfReader, PdfWriter
+from io import BytesIO
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
 
 def ocultar_cpf(input_pdf):
     # Criar o diretório "pdfs" se não existir
@@ -11,20 +14,37 @@ def ocultar_cpf(input_pdf):
 
     # Abrir o arquivo PDF
     with open(input_pdf, 'rb') as file:
-        reader = PyPDF2.PdfReader(file)
-        writer = PyPDF2.PdfWriter()
+        reader = PdfReader(file)
+        writer = PdfWriter()
 
         # Iterar por todas as páginas do PDF
         for page_num in range(len(reader.pages)):
             page = reader.pages[page_num]
+
+            # Extrair o texto da página (se possível)
             text = page.extract_text()
 
-            # Ofuscar o CPF
-            cpf_pattern = r'\d{3}\.\d{3}\.\d{3}-\d{2}'
-            text_ocultado = re.sub(cpf_pattern, 'XXX.XXX.XXX-XX', text)
+            if text:
+                # Ofuscar o CPF
+                cpf_pattern = r'\d{3}\.\d{3}\.\d{3}-\d{2}'
+                text_ocultado = re.sub(cpf_pattern, 'XXX.XXX.XXX-XX', text)
 
-            # Adicionar a página modificada ao writer
-            page.merge_text(text_ocultado)
+                # Criar um novo PDF com o texto modificado
+                packet = BytesIO()
+                c = canvas.Canvas(packet, pagesize=letter)
+
+                # Adicionar o texto modificado ao novo PDF
+                c.drawString(100, 750, text_ocultado)  # Posições e layout podem precisar de ajustes
+                c.save()
+
+                # Voltar a carregar o novo conteúdo em um PDF
+                packet.seek(0)
+                new_pdf = PdfReader(packet)
+
+                # Mesclar a página original com a página modificada
+                page.merge_page(new_pdf.pages[0])
+
+            # Adicionar a página ao escritor
             writer.add_page(page)
 
         # Salvar o novo arquivo PDF no diretório "pdfs" com o nome modificado
