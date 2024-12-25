@@ -1,9 +1,9 @@
-# Projeto: Ocultação de CPF em PDFs
+# Projeto: CPF Privacy
 > **Nota:**
 > Ao interagir com o projeto, você concorda em cumprir nosso código de conduta e seguir as diretrizes e etiquetas gerais de contribuição de código aberto!
 
 
-Este projeto visa ocultar CPFs em documentos PDF, aplicando uma técnica de "blur" nas localizações dos números de CPF encontrados no texto extraído do PDF.
+Este projeto visa ocultar CPFs em documentos PDF, aplicando uma técnica para borrar nas localizações dos números de CPF encontrados no texto extraído do PDF.
 </br>O projeto também conta com um *pipeline *básico* para treinar um modelo de IA para detectar e ocultar CPFs em PDFs.
 
 ## Funcionalidades
