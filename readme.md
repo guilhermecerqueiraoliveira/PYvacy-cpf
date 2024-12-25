@@ -56,13 +56,13 @@ pip install -r requirements.txt
 ```
 ## Principais dependências do projeto:
 
-- PyPDF2: Para manipulação de arquivos PDF.
-- pdfminer: Para extração de texto de PDFs.
-- reportlab: Para gerar novos arquivos PDF.
-- spaCy: Para processamento de linguagem natural e detecção de entidades nomeadas (NER).
-- PIL (Pillow): Para processamento de imagens (aplicação de blur).
-- pdf2image: Para converter páginas de PDFs em imagens.
-- scikit-learn: Para treinamento de modelos de aprendizado de máquina (opcional).
+- [PyPDF2](https://pypi.org/project/PyPDF2/): Para manipulação de arquivos PDF.
+- [pdfminer](https://pypi.org/project/pdfminer/): Para extração de texto de PDFs.
+- [reportlab](https://pypi.org/project/reportlab): Para gerar novos arquivos PDF.
+- [spaCy](https://pypi.org/project/spaCy): Para processamento de linguagem natural e detecção de entidades nomeadas (NER).
+- [PIL (Pillow)](https://pypi.org/project/PILL): Para processamento de imagens (aplicação de blur).
+- [pdf2image](https://pypi.org/project/)pdf2image: Para converter páginas de PDFs em imagens.
+- [scikit-learn](https://pypi.org/project/scikit-learn): Para treinamento de modelos de aprendizado de máquina (opcional).
 
 ## Como Usar
 ### 1. Instalar Dependências
