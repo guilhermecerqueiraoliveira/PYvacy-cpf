@@ -165,7 +165,8 @@ Nosso objetivo é criar uma ferramenta que realmente ajude a proteger dados sens
 
 
 ## Licença
-Este projeto está licenciado sob a [MIT License]([(https://github.com/guilhermecerqueiraoliveira/guilhermecerqueiraoliveira.github.io/blob/master/license.md)).
+Este projeto está licenciado sob a [MIT License](https://github.com/guilhermecerqueiraoliveira/guilhermecerqueiraoliveira.github.io/blob/master/license.md).
+</br>
 <details>
 MIT License
 
