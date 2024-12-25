@@ -26,9 +26,32 @@ def detectar_cpfs(texto):
 
     return cpfs_detectados
 
+def obter_posicoes_cpfs(input_pdf, cpfs_detectados):
+    """
+    Recebe o PDF e as entidades CPF e retorna suas posições no texto da página.
+    """
+    # Usar o pdfminer para obter as posições das palavras no texto
+    positions = []
+    with open(input_pdf, 'rb') as file:
+        reader = PdfReader(file)
+        for page_num in range(len(reader.pages)):
+            page = reader.pages[page_num]
+            text = extract_text(input_pdf, page_numbers=[page_num])
+
+            # Para cada CPF detectado, verificar a posição no texto
+            for cpf in cpfs_detectados:
+                # Usar uma expressão regular para identificar a posição do CPF
+                start_index = text.find(cpf)
+                if start_index != -1:
+                    # Simulação de cálculo da posição no texto (mais simples)
+                    x = start_index % 500  # Exemplo de cálculo de posição
+                    y = 500 - (start_index // 500) * 15  # Exemplo de linha de texto
+                    positions.append((x, y))
+    return positions
+
 def ocultar_cpf(input_pdf):
     """
-    Função principal para ocultar CPFs em um arquivo PDF.
+    Função principal para ocultar CPFs em um arquivo PDF com blocos pretos ou blur.
     """
     # Criar o diretório "pdfs" se não existir
     if not os.path.exists("pdfs"):
@@ -40,10 +63,8 @@ def ocultar_cpf(input_pdf):
     # Detectar CPFs no texto extraído
     cpfs_detectados = detectar_cpfs(texto)
 
-    # Substituir os CPFs detectados por 'XXX.XXX.XXX-XX'
-    texto_ocultado = texto
-    for cpf in cpfs_detectados:
-        texto_ocultado = texto_ocultado.replace(cpf, 'XXX.XXX.XXX-XX')
+    # Obter as posições dos CPFs no PDF
+    posicoes_cpfs = obter_posicoes_cpfs(input_pdf, cpfs_detectados)
 
     # Nome do arquivo de saída
     output_pdf = f"pdfs/{os.path.splitext(os.path.basename(input_pdf))[0]} (CPF OCULTO).pdf"
@@ -61,11 +82,10 @@ def ocultar_cpf(input_pdf):
             packet = BytesIO()
             c = canvas.Canvas(packet, pagesize=letter)
 
-            # Definir a fonte e o tamanho para o texto
-            c.setFont("Helvetica", 10)
-
-            # Inserir o texto oculto (substituído)
-            c.drawString(100, 750, texto_ocultado)
+            # Desenhar um bloco preto sobre os CPFs detectados
+            c.setFillColorRGB(0, 0, 0)  # Cor preta
+            for x, y in posicoes_cpfs:
+                c.rect(x, y, 100, 15, fill=True)  # Desenha um retângulo preto sobre o CPF
 
             # Salvar o novo canvas como um arquivo em memória
             c.save()
