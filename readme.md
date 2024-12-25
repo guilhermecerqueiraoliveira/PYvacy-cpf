@@ -32,15 +32,15 @@ privacy_cpf/                      # Diretório principal do projeto
 │   ├── CPF_OCULTO.pdf
 │
 ├── tests/                        # Diretório de testes (unitários ou de integração)
-│   ├── test_extracao_texto.py    # Teste para a extração de texto de PDF
-│   ├── test_detecta_cpf.py       # Teste para o detector de CPF
-│   └── test_ocultar_cpf.py       # Teste para a função que oculta o CPF no PDF
+│   ├── test_extraction.py        # Teste para a extração de texto de PDF
+│   ├── test_detecta.py           # Teste para o detector de CPF
+│   └── test_ocultar.py           # Teste para a função que oculta o CPF no PDF
 │
 ├── models/                       # Dados de treinamento e feedback do modelo
-│   ├── cpf_detections.json       # Armazena as detecções feitas pela IA
+│   ├── __init__.py               # Indica que o diretório é um pacote Python
 │   ├── cpfs_sinteticos.txt       # Armazena os CPFs sintéticos para o treinamento
 │   ├── detect_and_save.py        # Script para detectar e salvar CPFs durante o treinamento
-│   └── __init__.py               # Indica que o diretório é um pacote Python
+│   └── cpf_detections.json       # Armazena as detecções feitas pela IA
 │
 ├── cpf_privacy.py                # Script principal que processa os PDFs e oculta CPFs
 ├── train_model.py                # Script para treinar o modelo de IA
