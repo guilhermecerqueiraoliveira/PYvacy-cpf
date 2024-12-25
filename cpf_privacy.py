@@ -43,6 +43,7 @@ def obter_posicoes_cpfs(input_pdf, cpfs_detectados):
             for cpf in cpfs_detectados:
                 start_index = text.find(cpf)
                 if start_index != -1:
+                    # A posição do CPF será determinada pelo índice onde ele aparece no texto
                     x = start_index % 500  # Exemplo de cálculo de posição (ajustar conforme necessário)
                     y = 500 - (start_index // 500) * 15  # Exemplo de linha de texto (ajustar conforme necessário)
                     positions.append((x, y))
@@ -55,7 +56,7 @@ def aplicar_blur_na_imagem(image, cpfs_detectados, posicoes_cpfs):
     """
     for (x, y) in posicoes_cpfs:
         # Definir uma área para aplicar o blur (em torno da posição do CPF)
-        cropped_area = image.crop((x, y, x + 100, y + 20))  # A área a ser desfocada
+        cropped_area = image.crop((x, y, x + 120, y + 20))  # Ajuste o tamanho da área de corte
         blurred_area = cropped_area.filter(ImageFilter.GaussianBlur(radius=5))
         image.paste(blurred_area, (x, y))  # Coloca o blur na imagem
     return image
@@ -77,20 +78,26 @@ def ocultar_cpf(input_pdf):
     # Obter as posições dos CPFs no PDF
     posicoes_cpfs = obter_posicoes_cpfs(input_pdf, cpfs_detectados)
 
-    # Converter a primeira página do PDF para imagem
+    # Converter as páginas do PDF para imagens
     imagens = convert_from_path(input_pdf)
 
-    # Aplicar blur na imagem
+    # Listar imagens processadas para gerar o PDF
+    imagens_com_blur = []
+
     for i, image in enumerate(imagens):
+        # Aplicar o blur nas imagens
         image_com_blur = aplicar_blur_na_imagem(image.copy(), cpfs_detectados, posicoes_cpfs)
 
-        # Salvar as imagens modificadas
+        # Salvar as imagens modificadas para o PDF
         output_image_path = f"pdfs/{os.path.splitext(os.path.basename(input_pdf))[0]}_page_{i + 1}.png"
         image_com_blur.save(output_image_path)
 
-        # Converter as imagens de volta para PDF
-        pdf_path = f"pdfs/{os.path.splitext(os.path.basename(input_pdf))[0]}_CPF_OCULTO.pdf"
-        image_com_blur.save(pdf_path, "PDF", resolution=100.0)
+        # Adicionar a imagem à lista de imagens com blur
+        imagens_com_blur.append(image_com_blur)
+
+    # Gerar o PDF final a partir das imagens com blur
+    pdf_path = f"pdfs/{os.path.splitext(os.path.basename(input_pdf))[0]}_CPF_OCULTO.pdf"
+    imagens_com_blur[0].save(pdf_path, "PDF", resolution=100.0, save_all=True, append_images=imagens_com_blur[1:])
 
     print(f"Arquivo PDF gerado com CPF oculto: {pdf_path}")
 
