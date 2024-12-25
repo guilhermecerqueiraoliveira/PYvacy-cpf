@@ -21,25 +21,30 @@ A estrutura do projeto está organizada da seguinte forma:
 privacy_cpf/                      # Diretório principal do projeto
 │
 ├── Certificados Gui/             # Diretório para armazenar os PDFs que você quer processar (opcional)
-│   ├── Certificado - Curso de PHP.pdf
-│   └── ... (outros certificados)   
+│   ├── Certificado - Curso.pdf   # Arquivos (temporários)
+│   └── ... (outros certificados)
 │
 ├── examples/                     # Exemplos de entrada e saída para testes (opcional)
-│   └── exemplo_entrada.pdf
-│   └── exemplo_saida.pdf
+│   ├── exemplo_entrada.pdf
+│   ├── exemplo_saida.pdf
 │
 ├── pdfs/                         # Diretório para armazenar os PDFs gerados com CPF oculto
-│   └── CPF_OCULTO.pdf
+│   ├── CPF_OCULTO.pdf
 │
 ├── tests/                        # Diretório de testes (unitários ou de integração)
-│   ├── test_extracao_texto.py     # Teste para a extração de texto de PDF
+│   ├── test_extracao_texto.py    # Teste para a extração de texto de PDF
 │   ├── test_detecta_cpf.py       # Teste para o detector de CPF
 │   └── test_ocultar_cpf.py       # Teste para a função que oculta o CPF no PDF
 │
-├── __init__.py                   # Indica que o diretório é um pacote Python (caso use pacotes)
+├── models/                       # Dados de treinamento e feedback do modelo
+│   ├── cpf_detections.json       # Armazena as detecções feitas pela IA
+│   ├── cpfs_sinteticos.txt       # Armazena os CPFs sintéticos para o treinamento
+│   ├── detect_and_save.py        # Script para detectar e salvar CPFs durante o treinamento
+│   └── __init__.py               # Indica que o diretório é um pacote Python
 │
 ├── cpf_privacy.py                # Script principal que processa os PDFs e oculta CPFs
-├── train_model.py                # Script para treinar o modelo de IA (se necessário)
+├── train_model.py                # Script para treinar o modelo de IA
+├── generate_fake_cpfs.py         # Script para gerar CPFs sintéticos para treino
 ├── requirements.txt              # Lista de dependências do projeto
 ├── Dockerfile                    # Arquivo de configuração para o Docker (se for usar Docker)
 ├── .gitignore                    # Ignora arquivos desnecessários para o Git
