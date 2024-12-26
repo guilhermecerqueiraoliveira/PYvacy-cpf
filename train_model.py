@@ -30,20 +30,20 @@ def train_model(training_data, model_dir="models/ner_model", epochs=10):
     else:
         print(f"[INFO] Diretório '{model_dir}' não encontrado. Criando um novo modelo...")
         nlp = spacy.blank("pt")  # Cria um modelo vazio
-    
+
     # Criar ou carregar o componente NER
     if "ner" not in nlp.pipe_names:
         ner = nlp.create_pipe("ner")
         nlp.add_pipe("ner", last=True)
     else:
         ner = nlp.get_pipe("ner")
-    
+
     # Adicionar a label "CPF"
     ner.add_label("CPF")
 
     # Configurar o otimizador
     optimizer = nlp.begin_training()
-    
+
     # Embaralhar os dados para evitar overfitting
     random.shuffle(training_data)
 
@@ -51,15 +51,15 @@ def train_model(training_data, model_dir="models/ner_model", epochs=10):
     for epoch in range(epochs):
         print(f"[INFO] Iniciando época {epoch+1} de {epochs}...")
         losses = {}
-        
+
         # Atualizar o modelo com exemplos de treinamento
         for text, annotations in training_data:
             doc = nlp.make_doc(text)
             example = Example.from_dict(doc, {"entities": annotations})
-            
+
             # Treinamento com dropout para evitar overfitting
             nlp.update([example], drop=0.5, losses=losses)
-        
+
         print(f"[INFO] Perda (loss) na época {epoch+1}: {losses['ner']}")
 
         # Avaliar o modelo a cada 5 épocas

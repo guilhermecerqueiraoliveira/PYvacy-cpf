@@ -1,0 +1,24 @@
+{
+    "recommendations": [
+        "arcticicestudio.nord-visual-studio-code", 
+        "ms-python.python", 
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "python.black",
+        "ms-python.flake8",
+        "ms-toolsai.jupyter-keymap",
+        "magicstack.magicpython",
+        "njpwerner.autodocstring",
+        "visualstudioexptteam.vscodeintellicode",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "ms-toolsai.azureml",
+        "ms-python.tensorflow-snippets",
+        "pytorch.snippets",
+        "Shan.code-settings-sync",
+        "ms-python.python-debugger",
+        "natevaughn.python-environment-manager",
+        "editorconfig.editorconfig"
+    ]
+}
