@@ -1,3 +1,12 @@
+# Copyright (c) 2024 José Guilherme Cerqueira de Oliveira <aluno.jose.cerqueira@doctum.edu.br>
+# This source code is licensed under the MIT license found in the license file.
+
+# O Dockerfile é um script de texto que contém uma coleção de instruções para automatizar a criação de uma imagem Docker.
+# Ele define o ambiente no qual o código será executado, incluindo o sistema operacional, dependências e configurações.
+# Isso garante que o aplicativo seja executado de maneira consistente em diferentes ambientes.
+# Para mais detalhes, consulte a documentação oficial:
+# Veja https://docs.docker.com/engine/reference/builder/ para mais detalhes
+
 # Use uma imagem base do Python 3.12
 FROM python:3.12-slim
 

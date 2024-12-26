@@ -1,6 +1,26 @@
+# Copyright (c) 2024 José Guilherme Cerqueira de Oliveira <aluno.jose.cerqueira@doctum.edu.br>
+# This source code is licensed under the MIT license found in the license file.
+
+# Arquivo requirements.txt no Python é usado para listar todas as dependências de um projeto.
+# Ele permite que você especifique as bibliotecas e suas versões necessárias para executar o projeto.
+# Isso facilita a instalação das dependências com um único comando, garantindo que todos os desenvolvedores
+# e ambientes de produção usem as mesmas versões das bibliotecas.
+# Veja https://learnpython.com/blog/python-requirements-file/ para mais detalhes.
+
+# Biblioteca para manipulação de PDFs
 PyPDF2
+
+# Biblioteca para extração de texto de PDFs
 pdfminer.six
+
+# Biblioteca para geração de PDFs
 reportlab
+
+# Biblioteca para manipulação de imagens
 Pillow
+
+# Biblioteca para processamento de linguagem natural
 spacy
+
+# Biblioteca para conversão de PDFs em imagens
 pdf2image

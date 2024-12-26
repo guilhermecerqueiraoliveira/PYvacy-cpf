@@ -3,8 +3,13 @@
 > Ao interagir com o projeto, você concorda em cumprir nosso código de conduta e seguir as diretrizes e etiquetas gerais de contribuição de código aberto!
 
 
-Este projeto visa ocultar CPFs em documentos PDF, aplicando uma técnica para borrar nas localizações dos números de CPF encontrados no texto extraído do PDF.
-</br>O projeto também conta com um *pipeline *básico* para treinar um modelo de IA para detectar e ocultar CPFs em PDFs.
+Este projeto tem como obejtivo ocultar CPFs em documentos PDF, aplicando *blur* na localização do CPF.
+</br>No projeto você encontra um modelo de inteligência artificial *básico* utilizando (NER) treinado por mim com 600 mil CPFs sintéticos.
+
+
+## Indice
+> **NOTA:**
+>		Ainda desenvolvendo o [Indice](#indice)
 
 ## Funcionalidades
 
@@ -179,7 +184,7 @@ Nosso objetivo é criar uma ferramenta que realmente ajude a proteger dados sens
 Este projeto está licenciado sob a [MIT License](https://github.com/guilhermecerqueiraoliveira/guilhermecerqueiraoliveira.github.io/blob/master/license.md).
 </br>
 <details>
-MIT License
+	<summary><em>MIT License</em></summary>
 
 Copyright (c) 2024 José Guilherme Cerqueira de Oliveira <aluno.jose.cerqueira@doctum.edu.br>
 
@@ -200,4 +205,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 </details>

@@ -1,3 +1,9 @@
+# Copyright (c) 2024 José Guilherme Cerqueira de Oliveira <aluno.jose.cerqueira@doctum.edu.br>
+# This source code is licensed under the MIT license found in the license file.
+
+# Padrão de caminho para ignorar os arquivos e diretórios.
+# Veja https://git-scm.com/docs/gitignore para mais detalhes.
+
 # Arquivos temporários do ambiente virtual ou outputs
 venv/
 __pycache__/
