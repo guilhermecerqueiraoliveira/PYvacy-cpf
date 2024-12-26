@@ -24,3 +24,4 @@ spacy
 
 # Biblioteca para conversão de PDFs em imagens
 pdf2image
+pdfminer
