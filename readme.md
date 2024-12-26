@@ -34,17 +34,23 @@ privacy_cpf/                      # Diretório principal do projeto
 ├── tests/                        # Diretório de testes (unitários ou de integração)
 │   ├── test_extraction.py        # Teste para a extração de texto de PDF
 │   ├── test_detecta.py           # Teste para o detector de CPF
+│   ├── test_model.py             # Teste para saber quanto o modulo aprendeu acessando cpf_data.txt e os arquivos de machine learning
 │   └── test_ocultar.py           # Teste para a função que oculta o CPF no PDF
 │
 ├── models/                       # Dados de treinamento e feedback do modelo
+│   ├── ner_model                 # tem o diretório ner, vocab,d config.cfg, meta.json e tokenizer
 │   ├── __init__.py               # Indica que o diretório é um pacote Python
 │   ├── cpfs_sinteticos.txt       # Armazena os CPFs sintéticos para o treinamento
 │   ├── detect_and_save.py        # Script para detectar e salvar CPFs durante o treinamento
 │   └── cpf_detections.json       # Armazena as detecções feitas pela IA
 │
+├── venv/ # Contém as páginas bin, include, lib e lib64 e o arquivo pyvenv.cfg
+│
+├── cpp.py                        # Responsável por inicializar scripts relacionados a ocultar os CPFs
 ├── cpf_privacy.py                # Script principal que processa os PDFs e oculta CPFs
 ├── train_model.py                # Script para treinar o modelo de IA
 ├── generate_fake_cpfs.py         # Script para gerar CPFs sintéticos para treino
+├── check_duplicates.py           # Checa se existem CPF duplicados gerados pelo generate_fake_cpfs postos no cpf_data.txt
 ├── requirements.txt              # Lista de dependências do projeto
 ├── Dockerfile                    # Arquivo de configuração para o Docker (se for usar Docker)
 ├── .gitignore                    # Ignora arquivos desnecessários para o Git

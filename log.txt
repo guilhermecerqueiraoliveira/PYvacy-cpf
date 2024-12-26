@@ -1,0 +1,20 @@
+[INFO] Dados de treinamento carregados de models/cpf_data.txt
+[INFO] Diretório 'models/ner_model' já existe. Carregando modelo existente...
+[INFO] Iniciando época 1 de 10...
+Traceback (most recent call last):
+  File "/workspaces/privacy_cpf/train_model.py", line 136, in <module>
+    train_model(training_data)
+  File "/workspaces/privacy_cpf/train_model.py", line 61, in train_model
+    nlp.update([example], drop=0.5, losses=losses)
+  File "/workspaces/privacy_cpf/venv/lib/python3.12/site-packages/spacy/language.py", line 1196, in update
+    proc.update(examples, sgd=None, losses=losses, **component_cfg[name])  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "spacy/pipeline/transition_parser.pyx", line 425, in spacy.pipeline.transition_parser.Parser.update
+  File "/workspaces/privacy_cpf/venv/lib/python3.12/site-packages/thinc/model.py", line 328, in begin_update
+    return self._func(self, X, is_train=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "spacy/ml/parser_model.pyx", line 348, in spacy.ml.parser_model.step_forward
+  File "/workspaces/privacy_cpf/venv/lib/python3.12/site-packages/thinc/backends/ops.py", line 497, in get_dropout_mask
+    return cast(FloatsXd, self.asarray(mask, dtype="float32"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
