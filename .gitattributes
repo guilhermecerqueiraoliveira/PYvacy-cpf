@@ -1,0 +1,14 @@
+# Copyright (c) 2024 José Guilherme Cerqueira de Oliveira <aluno.jose.cerqueira@doctum.edu.br>
+# This source code is licensed under the MIT license found in the license file.
+
+# Configuração para definir atributos.
+# O arquivo .gitattributes permite que você especifique como diferentes tipos de arquivos são tratados pelo Git.
+# Você pode definir atributos específicos para arquivos ou diretórios específicos.
+
+# Veja https://git-scm.com/docs/gitattributes para mais detalhes.
+
+
+# Realize automaticamente a normalização de feed de linha (LF) para arquivos detectados como texto e
+# deixe todos os arquivos detectados como binários intocados.
+
+models/* filter=lfs diff=lfs merge=lfs -text

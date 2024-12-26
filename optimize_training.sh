@@ -1,7 +1,11 @@
-#!/bin/bash
+# Copyright (c) 2024 José Guilherme Cerqueira de Oliveira <aluno.jose.cerqueira@doctum.edu.br>
+# This source code is licensed under the MIT license found in the license file.
 
-# Script de otimização para o treinamento de IA no GitHub Codespace
-# Ajusta o uso de CPU, memória e configurações para maximizar o desempenho
+# Script de otimização para o treinamento de IA no GitHub Codespace.
+# Ajusta o uso de CPU, memória e configurações para maximizar o desempenho.
+# Veja https://github.com/guilhermecerqueiraoliveira/privacy_cpf/blob/readme.md para mais detalhes.
+
+#!/bin/bash
 
 # Função para verificar e usar a GPU se disponível
 check_gpu() {
@@ -67,6 +71,9 @@ optimize_environment() {
 
     # Iniciar o treinamento em tmux
     start_training_in_tmux
+
+    # Executar os testes e salvar o log
+    tmux new-session -d -s log_session 'python ./tests/test_model.py'
 }
 
 # Executa a função de otimização
