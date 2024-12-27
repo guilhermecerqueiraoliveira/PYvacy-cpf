@@ -91,7 +91,7 @@ A liderança da comunidade seguirá estas Diretrizes de Impacto na Comunidade pa
 
 * a. Este Código de Conduta se aplica a todos os membros projeto.
 * b. Este Software está sob a [Licença MIT](https://github.com/guilhermecerqueiraoliveira/privacy_cpf/blob/main/LICENSE), de código aberto, e assim permanecerá.
-* c. Teste
+* c. Sempre utilize do bom senso.
 
 ## Contato
 
@@ -99,7 +99,7 @@ Por favor, use uma das seguintes formas de entrar em contato conosco ou enviar r
 > **Nota:**
 > Dependendo de qual opção que escolher, talvez leve algumas horas ou dias para visualizar sua denúncia, mas não se preocupe. Caso sua denúncia não tenha dados sensíveis e seja apenas uma *formalidade com a prova*, sinta-se à vontade para [reportar](https://github.com/guilhermecerqueiraoliveira/privacy_cpf/discussions/1#discussion-7745304) públicamente, provavelmente será mais rápido.
 
-email
+  * Email <a><
 
 ---
 <center>

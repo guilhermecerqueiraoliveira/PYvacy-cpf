@@ -4,11 +4,19 @@
 # Padrão de caminho para ignorar os arquivos e diretórios.
 # Veja https://git-scm.com/docs/gitignore para mais detalhes.
 
+# Arquivos Gerais
+*.pdf
+
+# Arquivo gerado por ambiente virtual (replit)
+.config/
+.replit
+replit.nix
+
+
 # Arquivos temporários do ambiente virtual ou outputs
 venv/
 __pycache__/
 *.log
-*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

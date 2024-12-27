@@ -8,7 +8,7 @@ Este projeto tem como obejtivo ocultar CPFs em documentos PDF, aplicando *blur* 
 
 
 ## Indice
-> **NOTA:**
+> **Nota:**
 >		Ainda desenvolvendo o [Indice](#indice)
 
 ## Funcionalidades
@@ -18,7 +18,7 @@ Este projeto tem como obejtivo ocultar CPFs em documentos PDF, aplicando *blur* 
 - **Aplicação de Blur**: Aplica um efeito de desfoque (blur) nas localizações dos CPFs encontrados nas imagens do PDF.
 - **Criação de PDF com CPF oculto**: Gera novos PDFs com os CPFs ocultos.
 
-## Estrutura do Projeto
+## Estrutura do projeto
 
 A estrutura do projeto está organizada da seguinte forma:
 
@@ -84,7 +84,7 @@ pip install -r requirements.txt
 ### 1. Instalar Dependências
 Antes de rodar o código, é necessário instalar as dependências. Se você já tem o requirements.txt, basta executar:
 
-```bash
+```python
 pip install -r requirements.txt
 ```
 
