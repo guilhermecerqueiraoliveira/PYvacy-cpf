@@ -1,5 +1,7 @@
 {pkgs}: {
   deps = [
+    pkgs.pinentry-all
+    pkgs.gnupg
     pkgs.neofetch
     pkgs.htop
     pkgs.tmux

@@ -6,6 +6,7 @@
 
 # Arquivos Gerais
 *.pdf
+*.key
 
 # Arquivo gerado por ambiente virtual (replit)
 .config/

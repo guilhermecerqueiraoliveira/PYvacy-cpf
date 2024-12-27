@@ -1,6 +1,6 @@
 # Política de Segurança
 > **Nota:**
-> Ao interagir com o projeto, você concorda em cumprir seu [código de conduta](code_of_conduct.md) e seguir as diretrizes e [etiquetas][etq] gerais de [contribuição][ops] de código aberto.
+> Ao interagir com o projeto, você concorda em cumprir seu [código de conduta](code_of_conduct.md) e seguir as diretrizes e [etiquetas][etq] gerais de [contribuição][ops] de código aberto
 
 Este projeto visa priorizar a segurança do usuário e a privacidade dos dados. Estamos comprometidos com:
 
@@ -14,13 +14,13 @@ Atualmente, não há vulnerabilidades conhecidas neste projeto. Se você descobr
 
 ## Relatando problemas de segurança
 > **Nota:**
-> Nunca relate vulnerabilidades de segurança por meio de problemas públicos do GitHub ou de qualquer outro canal ou plataforma pública (comunicação)!
+> Nunca relate vulnerabilidades de segurança por meio de problemas públicos do GitHub ou de qualquer outro canal ou plataforma pública comunicação
 
 Em vez disso, relate vulnerabilidades de segurança por:
 
-* **Private Security Vulnerability Reporting** do GitHub.
-* Envie uma mensagem no telegra para @guibot, para Matrix com o user @guibot:matrix.org ou se preferir no discord para o user @guibot. Em caso dúvida, para obter mais ajuda para enviar um relatório você pode entrar em algum dos nossos grupos.
-* Enviando um email para aluno.jose.cerqueira@doctum.edu.br, a liderança do projeto, se preferir enviar sem fazer login ou criar uma conta no GitHub. Se possível criptografe seu email com PGP. A chave pode ser encontrada no repositório do GitHub.
+* [Private Security Vulnerability Reporting](https://docs.github.com/pt/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) do GitHub.
+* Envie uma mensagem no [telegram][] para @guibot, para [Matrix] com o user @guibot:matrix.org ou se preferir no discord para o user @guibot. Em caso dúvida, para obter mais ajuda para enviar um relatório você pode entrar em algum dos nossos grupos.
+* Enviando um email para aluno.jose.cerqueira@doctum.edu.br, a liderança do projeto, se preferir enviar sem fazer login ou criar uma conta no GitHub. Se possível **criptografe seu email** com [PGP][]. A chave pode ser encontrada no [repositório] do GitHub.
 > **Nota:**
 > Caso você tenha um email Proton, você pode enviar sem a necessidade de criar uma chave PGP.
 
