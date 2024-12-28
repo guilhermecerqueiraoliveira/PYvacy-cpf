@@ -6,7 +6,7 @@
 Todos membros, participantes e colaboradoras estão comprometidos a agir de acordo com este [Código de Conduta](#código-de-conduta). Pedimos que você siga essas [diretrizes](#diretrizes) que ajudam a orientar nossas interações e se esforçam para manter um projeto positivo e crescente e nos ajudam a fornecer e garantir um ambiente seguro para todos. Vamos trabalhar juntos para manter a comunidade um lugar onde as pessoas se sintam seguras para participar, respeitando elas e seu tempo.
 
 > **Nota:**
-> Violações graves e persistentes, como comportamento desrespeitoso, abusivo, de assédio ou inaceitável, podem ser [denunciadas]() a nós usando qualquer uma das opções de [contato]() listadas abaixo.
+> Violações graves e persistentes, como comportamento desrespeitoso, abusivo, de assédio ou inaceitável, podem ser [denunciadas](#denúncias) a nós usando qualquer uma das opções de [contato](#contato) listadas abaixo.
 ---
 Ao interagir com o projeto, você concorda em agir e interagir de maneiras que contribuam para uma comunidade de forma positiva e respeitosa com seu tempo.
 
@@ -32,7 +32,7 @@ Ao interagir com o projeto, você concorda em agir e interagir de maneiras que c
 
 Nem todo mundo tem experiência com comunidades de [código aberto][] e [etiquetas][] gerais e sabe intuitivamente o que é aceitável. As [diretrizes](#diretrizes) a seguir destinam-se a fornecer uma visão geral rápida para ajudá-lo a evitar suposições e armadilhas comuns:
 
-1. Não se sinta com direito receber suporte, tirar dúvidas ou aconselhamento, no *seu tempo* por que o projeto é de [código aberto]. Não peça aos membros do projeto, voluntários ou colaboradores que se reportem a você e cumpram os prazos como se trabalhassem para você ou lhe devessem algo. Isso é irritante, e portanto, pribido.
+1. Não se sinta com direito de receber suporte ou tirar dúvidas no *seu tempo* por que o projeto é de [código aberto]. Não peça aos membros do projeto, voluntários ou colaboradores que se reportem a você e cumpram os prazos como se trabalhassem para você ou lhe devessem algo. Isso é irritante, e portanto, pribido.
 
 2. A comunicação imprudente, dura ou ignorante é inaceitável, seja pública ou privada. A comunidade de código aberto difere de outras comunidades onde um tom áspero e agressivo é frequentemente comum, por isso não será tolerado. Tenha dissernimento e educação para com todos e o comportamento inadequado devido à falta de compreensão é, portanto, [proibido][].
 
