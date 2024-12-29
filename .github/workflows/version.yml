@@ -1,0 +1,30 @@
+name: Update Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Update version
+      run: |
+        VERSION=$(grep -oP '(?<=versao: )\d+\.\d+\.\d+' docs/version.yaml)
+        NEW_VERSION=$(echo $VERSION | awk -F. -v OFS=. '{$NF++;print}')
+        sed -i "s/versao: .*/versao: $NEW_VERSION/" docs/version.yaml
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add docs/version.yaml
+        git commit -m "Update version to $NEW_VERSION"
+        git push
