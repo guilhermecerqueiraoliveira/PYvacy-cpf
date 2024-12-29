@@ -2,30 +2,31 @@ name: Update Version Badge on Pull
 
 on:
   pull_request:
-    types: [closed] # Dispara ao fechar um pull request.
+    types: [closed]  # Dispara quando o Pull Request é fechado
 
 jobs:
   update-version:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Usa um sistema Linux para rodar o workflow
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3  # Faz o checkout (baixa) do código do repositório
 
-    - name: Update version JSON
+    - name: Get version from tag
       run: |
-        mkdir -p docs
+        VERSION=$(git describe --tags --abbrev=0)  # Pega a última tag do repositório
+        mkdir -p docs  # Cria a pasta 'docs' se ela não existir
         echo '{
           "schemaVersion": 1,
           "label": "version",
-          "message": "1.0.0", # Você pode substituir pela versão real.
+          "message": "'$VERSION'",  # Coloca a última tag
           "color": "blue"
-        }' > docs/version.json
+        }' > docs/version.json  # Salva no arquivo docs/version.json
 
     - name: Commit and push updated version badge
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add docs/version.json
-        git commit -m "Update version badge"
-        git push
+        git config --global user.name "github-actions[bot]"  # Nome do usuário
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"  # E-mail do bot
+        git add docs/version.json  # Adiciona o arquivo version.json ao commit
+        git commit -m "Update version badge"  # Faz o commit com a mensagem
+        git push  # Envia o commit para o repositório
