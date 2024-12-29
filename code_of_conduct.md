@@ -99,7 +99,10 @@ Por favor, use uma das seguintes formas de entrar em contato conosco ou enviar r
 > **Nota:**
 > Dependendo de qual opção que escolher, talvez leve algumas horas ou dias para visualizar sua denúncia, mas não se preocupe. Caso sua denúncia não tenha dados sensíveis e seja apenas uma *formalidade com a prova*, sinta-se à vontade para [reportar](https://github.com/guilhermecerqueiraoliveira/privacy_cpf/discussions/1#discussion-7745304) públicamente, provavelmente será mais rápido.
 
-  * Email <a><
+  * [Email pessoal][emailpessoal]
+  * [Email acadêmico][emailacademico]
+  * [Telegram][telegram]
+  * [Matrix][matrix] `ainda criando uma conta Matrix`
 
 ---
 <center>
@@ -118,13 +121,18 @@ Copyright © 2024 - Presente
 > Para obter respostas a perguntas comuns sobre este código de conduta, veja a página de Perguntas Frequentes (FAQ) em [https://www.contributor-covenant.org/faq][FAQ]. Traduções estão disponíveis em [https://www.contributor-covenant.org/translations][translations].
 
 [Mozilla][MozillaCoC] por diretrizes de impacto na comunidade.
-
 [GitHub][gitCoC] por um tamplate e um guia de código aberto.
 
-[CoC]: https://www.contributor-covenant.org
-[gitCoC]:https://opensource.guide/pt/
-[MozillaCoC]: https://github.com/mozilla/diversity
 
-[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
-[FAQ]: https://www.contributor-covenant.org/faq
-[translations]: https://www.contributor-covenant.org/translations
+<!-- Links -->
+
+[CoC]:https://www.contributor-covenant.org
+[gitCoC]:https://opensource.guide/pt/
+[MozillaCoC]:https://github.com/mozilla/diversity
+[v2.1]:https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
+[FAQ]:https://www.contributor-covenant.org/faq
+[translations]:https://www.contributor-covenant.org/translations
+[telegram]:https://t.me/guibot
+[emailpessoal]:guilhermebot43@gmail.com
+[emailacademico]:aluno.jose.cerqueira@doctum.edu.br
+[matrix]:
