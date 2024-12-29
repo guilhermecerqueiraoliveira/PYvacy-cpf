@@ -1,30 +1,31 @@
-name: Update Version
+name: Update Version Badge on Pull
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [closed] # Dispara ao fechar um pull request.
 
 jobs:
   update-version:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
-
-    - name: Update version
+    - name: Update version JSON
       run: |
-        VERSION=$(grep -oP '(?<=versao: )\d+\.\d+\.\d+' docs/version.yaml)
-        NEW_VERSION=$(echo $VERSION | awk -F. -v OFS=. '{$NF++;print}')
-        sed -i "s/versao: .*/versao: $NEW_VERSION/" docs/version.yaml
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git add docs/version.yaml
-        git commit -m "Update version to $NEW_VERSION"
-        git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/guilhermecerqueiraoliveira/PyPrivacy.git
+        mkdir -p docs
+        echo '{
+          "schemaVersion": 1,
+          "label": "version",
+          "message": "1.0.0", # Você pode substituir pela versão real.
+          "color": "blue"
+        }' > docs/version.json
+
+    - name: Commit and push updated version badge
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add docs/version.json
+        git commit -m "Update version badge"
+        git push
