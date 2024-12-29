@@ -2,7 +2,7 @@
 > **Nota:**
 > Ao interagir com o projeto, você concorda em cumprir nosso código de conduta e seguir as diretrizes e etiquetas gerais de contribuição de código aberto!
 
-![Versão](https://img.shields.io/badge/dynamic/yaml?url=https://github.com/guilhermecerqueiraoliveira/PyPrivacy/edit/main/docs/version.yaml&query=$.versao&label=Versão)
+![versão](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/https://github.com/guilhermecerqueiraoliveira/PyPrivacy/main/docs/version.json)
 
 
 Este projeto tem como obejtivo ocultar CPFs em documentos PDF, aplicando *blur* na localização do CPF.
