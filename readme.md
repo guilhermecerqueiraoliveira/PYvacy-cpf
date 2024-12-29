@@ -1,6 +1,8 @@
-# Projeto: PYvacy-cpf
+# Projeto PyPrivacy
 > **Nota:**
 > Ao interagir com o projeto, você concorda em cumprir nosso código de conduta e seguir as diretrizes e etiquetas gerais de contribuição de código aberto!
+
+![Versão](https://img.shields.io/badge/dynamic/yaml?url=https://github.com/guilhermecerqueiraoliveira/PyPrivacy/edit/main/version.yaml&query=$.versao&label=Versão)
 
 
 Este projeto tem como obejtivo ocultar CPFs em documentos PDF, aplicando *blur* na localização do CPF.
