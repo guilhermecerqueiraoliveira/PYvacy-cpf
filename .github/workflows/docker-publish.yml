@@ -2,7 +2,7 @@ name: Docker
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *'  # Executa diariamente à meia-noite (UTC)
   push:
     branches: [ "main" ]
     tags: [ 'v*.*.*' ]  # Publica apenas para tags semânticas
@@ -18,10 +18,10 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      packages: write
-      id-token: write
-
+      contents: read       # Permite ler o repositório
+      packages: write      # Permite escrever no GHCR
+      id-token: write      # Permite usar um token de ID (necessário para login no GHCR)
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -35,13 +35,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3.0.0
 
-      - name: Log into registry ${{ env.REGISTRY }}
+      - name: Log into GHCR
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v3.0.0
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_TOKEN }}  # Usando o token personalizado para GHCR
 
       - name: Extract Docker metadata
         id: meta
