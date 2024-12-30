@@ -116,14 +116,14 @@ Este projeto usa algumas bibliotecas do Python.
 Antes de rodar o código, é necessário instalar as dependências. Basta executar:
 
 ```python
-python setup.py
+pipi install -r requiriments.txt
 ```
 
 ### 2. Processar um PDF
-Para processar um arquivo PDF e ocultar os CPFs, basta executar o script `cpf_privacy.py` passando o caminho do arquivo PDF como argumento:
+Para processar um arquivo PDF e ocultar os CPFs, basta executar o script `privacy_pdf.py` passando o caminho do arquivo PDF como argumento:
 
 ```bash
-python cpf_privacy.py "Certificado - Curso.pdf"
+python privacy_cpf.py "Documento.pdf"
 ```
 *Isso vai gerar um novo arquivo PDF no diretório `/pdfs`, com os CPFs ocultos.*
 
