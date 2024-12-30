@@ -1,24 +1,59 @@
 # Projeto PyPrivacy
 > **Nota:**
-> Ao interagir com o projeto, você concorda em cumprir nosso código de conduta e seguir as diretrizes e etiquetas gerais de contribuição de código aberto!
+> Ao interagir com o projeto, você concorda em cumprir nosso código de conduta e seguir as diretrizes e etiquetas de contribuição de [código aberto](https://opensource.how/)
 
-![versão](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/guilhermecerqueiraoliveira/PyPrivacy/main/docs/version.json)
+<center>
+
+![versão](https://img.shields.io/github/release/guilhermecerqueiraoliveira/PyPrivacy.svg?style=flat-square&label=Release&logo=github&logoColor=ffffff&colorA=F4E5B9&colorB=F4E5B9)
+![Changelog](https://img.shields.io/badge/changelog-1.0.0-brightgreen?style=flat-square&logo=git&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+![Docs](https://img.shields.io/badge/docs-1.0.0-brightgreen?style=flat-square&logo=read-the-docs&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
 
 
 
-Este projeto tem como obejtivo ocultar CPFs em documentos PDF, aplicando *blur* na localização do CPF.
-</br>No projeto você encontra um modelo de inteligência artificial *básico* utilizando (NER) treinado por mim com 600 mil CPFs sintéticos.
+![spaCy version](https://img.shields.io/pypi/v/spacy.svg?style=flat-square&label=spaCy&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+![scikit-learn version](https://img.shields.io/pypi/v/scikit-learn.svg?style=flat-square&label=scikit-learn&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+![PyPDF2 version](https://img.shields.io/pypi/v/PyPDF2.svg?style=flat-square&label=PyPDF2&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+![reportlab version](https://img.shields.io/pypi/v/reportlab.svg?style=flat-square&label=reportlab&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
 
+</center>
+
+
+<!-- Pensando nessas bibliotecas:
+
+![TensorFlow version](https://img.shields.io/pypi/v/tensorflow.svg?style=flat-square&label=TensorFlow&logo=tensorflow&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+
+![pdfminer version](https://img.shields.io/pypi/v/pdfminer.six.svg?style=flat-square&label=pdfminer&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+
+![Pillow version](https://img.shields.io/pypi/v/Pillow.svg?style=flat-square&label=Pillow&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+
+![pdf2image version](https://img.shields.io/pypi/v/pdf2image.svg?style=flat-square&label=pdf2image&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+
+-->
+
+<center>
+
+**PyPrivacy** é como um canivete suiço. O objetivo deste projeto é utilizar um
+modelo de rede neural para encontrar dados pessoais, como CPF e ocultar em documentos.
+O modelo já foi treinado com 600 mil CPFs sintéticos.
+
+</center>
 
 ## Indice
-> **Nota:**
->		Ainda desenvolvendo o [Indice](#indice)
+> **Note:**
+>	Indice com links para o projeto
+
+[Funcinalidades](#funcionalidades)</br>
+[Estrutura do Projeto](#estrutura-do-projeto)</br>
+[Dependências](#dependências)</br>
+[Como usar](#como-usar)</br>
+[Como funciona](#como-funciona)</br>
+[Contribuições](#contribuições)</br>
+[Licença](#licença)</br>
 
 ## Funcionalidades
 
 - **Leitura de PDF**: Extrai o texto de arquivos PDF.
 - **Detecção de CPF**: Usa reconhecimento de entidades nomeadas (NER) para localizar CPFs no texto.
-- **Aplicação de Blur**: Aplica um efeito de desfoque (blur) nas localizações dos CPFs encontrados nas imagens do PDF.
 - **Criação de PDF com CPF oculto**: Gera novos PDFs com os CPFs ocultos.
 
 ## Estrutura do projeto
@@ -26,69 +61,62 @@ Este projeto tem como obejtivo ocultar CPFs em documentos PDF, aplicando *blur* 
 A estrutura do projeto está organizada da seguinte forma:
 
 ```plaintext
-privacy_cpf/                      # Diretório principal do projeto
+privacy_cpf/                      
 │
-├── Certificados Gui/             # Diretório para armazenar os PDFs que você quer processar (opcional)
-│   ├── Certificado - Curso.pdf   # Arquivos (temporários)
+├── Certificados Gui/             
+│   ├── Certificado - Curso.pdf   
 │   └── ... (outros certificados)
 │
-├── examples/                     # Exemplos de entrada e saída para testes (opcional)
+├── examples/                    
 │   ├── exemplo_entrada.pdf
 │   ├── exemplo_saida.pdf
 │
-├── pdfs/                         # Diretório para armazenar os PDFs gerados com CPF oculto
+├── pdfs/                         
 │   ├── CPF_OCULTO.pdf
 │
-├── tests/                        # Diretório de testes (unitários ou de integração)
-│   ├── test_extraction.py        # Teste para a extração de texto de PDF
-│   ├── test_detecta.py           # Teste para o detector de CPF
-│   ├── test_model.py             # Teste para saber quanto o modulo aprendeu acessando cpf_data.txt e os arquivos de machine learning
-│   └── test_ocultar.py           # Teste para a função que oculta o CPF no PDF
+├── tests/                        
+│   ├── test_extraction.py        
+│   ├── test_detecta.py           
+│   ├── test_model.py             
+│   └── test_ocultar.py           
 │
-├── models/                       # Dados de treinamento e feedback do modelo
-│   ├── ner_model                 # tem o diretório ner, vocab,d config.cfg, meta.json e tokenizer
-│   ├── __init__.py               # Indica que o diretório é um pacote Python
-│   ├── cpfs_sinteticos.txt       # Armazena os CPFs sintéticos para o treinamento
-│   ├── detect_and_save.py        # Script para detectar e salvar CPFs durante o treinamento
-│   └── cpf_detections.json       # Armazena as detecções feitas pela IA
+├── models/                       
+│   ├── ner_model                 
+│   ├── __init__.py               
+│   ├── cpfs_sinteticos.txt       
+│   ├── detect_and_save.py        
+│   └── cpf_detections.json       
 │
-├── venv/ # Contém as páginas bin, include, lib e lib64 e o arquivo pyvenv.cfg
+├── venv/ 
 │
-├── cpp.py                        # Responsável por inicializar scripts relacionados a ocultar os CPFs
-├── cpf_privacy.py                # Script principal que processa os PDFs e oculta CPFs
-├── train_model.py                # Script para treinar o modelo de IA
-├── generate_fake_cpfs.py         # Script para gerar CPFs sintéticos para treino
-├── check_duplicates.py           # Checa se existem CPF duplicados gerados pelo generate_fake_cpfs postos no cpf_data.txt
-├── requirements.txt              # Lista de dependências do projeto
-├── Dockerfile                    # Arquivo de configuração para o Docker (se for usar Docker)
-├── .gitignore                    # Ignora arquivos desnecessários para o Git
-├── LICENSE                       # Arquivo de licença (MIT License)
-└── readme.md                     # Arquivo de documentação do projeto
+├── cpp.py                        
+├── cpf_privacy.py                
+├── train_model.py                
+├── generate_fake_cpfs.py         
+├── check_duplicates.py           
+├── requirements.txt              
+├── Dockerfile                   
+├── .gitignore                    
+├── LICENSE                      
+└── readme.md                    
 ```
 
 ## Dependências
 
-Este projeto usa algumas bibliotecas populares do Python. Você pode instalar todas as dependências necessárias executando:
+Este projeto usa algumas bibliotecas do Python.
 
-```bash
-pip install -r requirements.txt
-```
-## Principais dependências do projeto:
-
-- [PyPDF2](https://pypi.org/project/PyPDF2/): Para manipulação de arquivos PDF.
-- [pdfminer](https://pypi.org/project/pdfminer/): Para extração de texto de PDFs.
-- [reportlab](https://pypi.org/project/reportlab): Para gerar novos arquivos PDF.
+- [PyPDF2](https://pypi.org/project/PyPDF2/): Para manipulação de arquivos PDF. [x]
+- [reportlab](https://pypi.org/project/reportlab): Para gerar novos arquivos PDF. [x]
 - [spaCy](https://pypi.org/project/spaCy): Para processamento de linguagem natural e detecção de entidades nomeadas (NER).
-- [PIL (Pillow)](https://pypi.org/project/PILL): Para processamento de imagens (aplicação de blur).
-- [pdf2image](https://pypi.org/project/)pdf2image: Para converter páginas de PDFs em imagens.
-- [scikit-learn](https://pypi.org/project/scikit-learn): Para treinamento de modelos de aprendizado de máquina (opcional).
+- [scikit-learn](https://pypi.org/project/scikit-learn): Para treinamento de modelos de aprendizado de máquina.
 
-## Como Usar
+## Como usar
+
 ### 1. Instalar Dependências
-Antes de rodar o código, é necessário instalar as dependências. Se você já tem o requirements.txt, basta executar:
+Antes de rodar o código, é necessário instalar as dependências. Basta executar:
 
 ```python
-pip install -r requirements.txt
+python setup.py
 ```
 
 ### 2. Processar um PDF
@@ -100,22 +128,14 @@ python cpf_privacy.py "Certificado - Curso.pdf"
 *Isso vai gerar um novo arquivo PDF no diretório `/pdfs`, com os CPFs ocultos.*
 
 ### 3. Treinamento do Modelo de IA
-Se você quiser treinar um **modelo de IA** para melhorar a detecção de CPFs, execute o script train_model.py:
+Se você quiser treinar um **modelo de IA** para melhorar a detecção de CPFs, execute o script `train_model.py`
 
 ```bash
 python train_model.py
 ```
-*Este script vai treinar um modelo simples para identificar CPFs no texto dos PDFs. O modelo treinado será salvo para ser utilizado na detecção de CPFs.*
+*Este script vai treinar o modelo para identificar CPFs no texto. O modelo treinado será salvo para ser utilizado na detecção de CPFs.*
 
-### 4. Testar o Projeto
-Você pode rodar os testes unitários e de integração no diretório tests/ para garantir que o código está funcionando corretamente:
-
-```bash
-pytest tests/
-```
-*Os testes verificam a funcionalidade de extração de texto, detecção de CPF e ocultação de CPFs.*
-
-## Como Funciona
+## Como funciona
 
 - **Leitura e Extração de Texto:** O script `cpf_privacy.py` usa a biblioteca [pdfminer]() para extrair o texto do PDF.
 - **Detecção de CPF:** Usando o modelo de NER do [spaCy](), o texto extraído é analisado em busca de CPFs. Caso sejam encontrados, suas localizações no texto são armazenadas.
@@ -127,12 +147,12 @@ Se você deseja rodar o projeto em um ambiente isolado e reproduzível, pode usa
 ### Construir a Imagem Docker:
 
 ```bash
-docker build -t privacy_cpf .
+docker build -t PyPrivacy .
 ```
 ### Rodar o Container Docker:
 
 ```bash
-docker run -v $(pwd):/app privacy_cpf python cpf_privacy.py "Certificado - Curso de PHP.pdf"
+docker run -v $(pwd):/app PyPrivacy python cpf_privacy.py "Certificado - Curso de PHP.pdf"
 ```
 *Este comando irá rodar o script dentro do container Docker, com o diretório atual montado como volume.*
 
