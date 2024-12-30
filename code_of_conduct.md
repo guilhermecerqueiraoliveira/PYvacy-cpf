@@ -105,14 +105,14 @@ Por favor, use uma das seguintes formas de entrar em contato conosco ou enviar r
   * [Matrix][matrix] `ainda criando uma conta Matrix`
 
 ---
-<center>
+<div align="center">
 
 Copyright © 2024 - Presente
 <a href="mailto:aluno.jose.cerqueira@doctum.edu.br">José Guilherme Cerqueira de Oliveira</a>
 
 ![License: MIT](https://img.shields.io/static/v1.svg?style=flat-square&label=License&message=MIT&logoColor=eceff4&logo=creativecommons&)
 
-</center>
+</div>
 ---
 
 ### Muito obrigado
@@ -135,4 +135,4 @@ Copyright © 2024 - Presente
 [telegram]:https://t.me/guibot
 [emailpessoal]:guilhermebot43@gmail.com
 [emailacademico]:aluno.jose.cerqueira@doctum.edu.br
-[matrix]:
+[matrix]:test.com.br

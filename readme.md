@@ -2,20 +2,20 @@
 > **Nota:**
 > Ao interagir com o projeto, você concorda em cumprir nosso código de conduta e seguir as diretrizes e etiquetas de contribuição de [código aberto](https://opensource.how/)
 
-<center>
+<div align="center">
 
-![versão](https://img.shields.io/github/release/guilhermecerqueiraoliveira/PyPrivacy.svg?style=flat-square&label=Release&logo=github&logoColor=ffffff&colorA=F4E5B9&colorB=F4E5B9)
-![Changelog](https://img.shields.io/badge/changelog-1.0.0-brightgreen?style=flat-square&logo=git&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
-![Docs](https://img.shields.io/badge/docs-1.0.0-brightgreen?style=flat-square&logo=read-the-docs&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+![versão](https://img.shields.io/github/release/guilhermecerqueiraoliveira/PyPrivacy.svg?style=flat-square&label=Release&logo=github&logoColor=black&colorA=F4E5B9&colorB=F4E5B9)
+![Changelog](https://img.shields.io/badge/changelog-1.0.0-brightgreen?style=flat-square&logo=git&logoColor=black&colorA=F4E5B9&colorB=F4E5B9)
+![Docs](https://img.shields.io/badge/docs-1.0.0-brightgreen?style=flat-square&logo=read-the-docs&logoColor=black&colorA=F4E5B9&colorB=F4E5B9)
 
 
 
-![spaCy version](https://img.shields.io/pypi/v/spacy.svg?style=flat-square&label=spaCy&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
-![scikit-learn version](https://img.shields.io/pypi/v/scikit-learn.svg?style=flat-square&label=scikit-learn&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
-![PyPDF2 version](https://img.shields.io/pypi/v/PyPDF2.svg?style=flat-square&label=PyPDF2&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
-![reportlab version](https://img.shields.io/pypi/v/reportlab.svg?style=flat-square&label=reportlab&logo=pypi&logoColor=white&colorA=F4E5B9&colorB=F4E5B9)
+![spaCy version](https://img.shields.io/pypi/v/spacy.svg?style=flat-square&label=spaCy&logo=pypi&logoColor=black&colorA=F4E5B9&colorB=F4E5B9)
+![scikit-learn version](https://img.shields.io/pypi/v/scikit-learn.svg?style=flat-square&label=scikit-learn&logo=pypi&logoColor=black&colorA=F4E5B9&colorB=F4E5B9)
+![PyPDF2 version](https://img.shields.io/pypi/v/PyPDF2.svg?style=flat-square&label=PyPDF2&logo=pypi&logoColor=black&colorA=F4E5B9&colorB=F4E5B9)
+![reportlab version](https://img.shields.io/pypi/v/reportlab.svg?style=flat-square&label=reportlab&logo=pypi&logoColor=black&colorA=F4E5B9&colorB=F4E5B9)
 
-</center>
+</div>
 
 
 <!-- Pensando nessas bibliotecas:
@@ -204,8 +204,20 @@ Nosso objetivo é criar uma ferramenta que realmente ajude a proteger dados sens
 
 
 ## Licença
+
+<div align="center">
+
 Este projeto está licenciado sob a [MIT License](https://github.com/guilhermecerqueiraoliveira/guilhermecerqueiraoliveira.github.io/blob/master/license.md).
 </br>
+
+Copyright © 2024 - Presente  
+<a href="mailto:aluno.jose.cerqueira@doctum.edu.br">José Guilherme Cerqueira de Oliveira</a>  
+
+![License: MIT](https://img.shields.io/badge/License-MIT-F4E5B9?style=for-the-badge&labelColor=F4E5B9&logo=creative-commons&logoColor=black)
+
+
+
+
 <details>
 	<summary><em>MIT License</em></summary>
 
@@ -230,3 +242,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 </details>
+</div>

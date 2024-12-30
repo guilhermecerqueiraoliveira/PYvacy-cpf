@@ -67,14 +67,17 @@ Observe que todas as comunicações, devem ser em português (pt-br), para garan
 Agradecemos as contribuições para melhorar a segurança deste projeto. Por favor, revise nossas diretrizes de [Contribuição](contributing.md) para obter detalhes sobre como enviar contribuições.
 
 ---
-<center>
 
-Copyright © 2024 - Presente
-<a href="mailto:aluno.jose.cerqueira@doctum.edu.br">José Guilherme Cerqueira de Oliveira</a>
+<div align="center">
 
-![License: MIT](https://img.shields.io/static/v1.svg?style=flat-square&label=License&message=MIT&logoColor=eceff4&logo=creativecommons&)
+Copyright © 2024 - Presente  
+<a href="mailto:aluno.jose.cerqueira@doctum.edu.br">José Guilherme Cerqueira de Oliveira</a>  
 
-</center>
+![License: MIT](https://img.shields.io/badge/License-MIT-F4E5B9?style=for-the-badge&labelColor=F4E5B9&logo=creative-commons&logoColor=black)
+
+
+</div>
+
 ---
 
 [etq]:https://opensource.how/etiquette/
